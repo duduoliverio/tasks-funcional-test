@@ -1,24 +1,19 @@
 package br.ce.wcaquino.tasks.functional;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TasksTest {
 
 	public WebDriver acessarAplicacao() throws MalformedURLException {
-//		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 		
-		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.51.209:4444/wd/hub"), cap);
-		
-		driver.navigate().to("http://192.168.51.209:8001/tasks/");
+		driver.navigate().to("http://localhost:8001/tasks/");
 		return driver;
 	}
 	
